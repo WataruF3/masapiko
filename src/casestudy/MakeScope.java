@@ -39,7 +39,7 @@ public class MakeScope extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 * アプリケーションスコープがなければ作成するメソッド
+	 * アプリケーションスコープがなければスコープを作成するメソッド
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");

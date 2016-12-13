@@ -9,6 +9,11 @@ import java.sql.Connection;
 
 public class ExportCSV {
 
+	/**
+	 *
+	 * DAOに接続し、csvファイルで出力するメソッド
+	 *
+	 */
 	public void exportCSV(){
 
 		Connection   con = null;
