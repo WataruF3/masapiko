@@ -21,12 +21,12 @@
 <body>
 
 
-	<%out.print("<p>"+Beans.getPwd()+"</p>");%>
+
 
    <%if(t!=null){ %>
 
    <div class="toggles">
-	   <form action="/connection/ConOrDie2" method="post" >
+	   <form action="/connection/ConOrDie" method="post" >
 
    <h1>ＤＢに格納する？</h1>
 	      <div class="toggle-border">
