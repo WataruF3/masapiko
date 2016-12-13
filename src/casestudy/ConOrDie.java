@@ -17,14 +17,14 @@ import analyzer.casestudy.RealData;
  * Servlet implementation class ConnectionOrDie2
  * DB格納機能とXML作成機能をスレッドで動かすサーブレット
  */
-@WebServlet("/ConOrDie2")
-public class ConOrDie2 extends HttpServlet {
+@WebServlet("/ConOrDie")
+public class ConOrDie extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ConOrDie2() {
+    public ConOrDie() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -126,7 +126,7 @@ public class ConOrDie2 extends HttpServlet {
 		//RequestDispatcher dispatcher = request.getRequestDispatcher("N1/administrator2.jsp");
 		//dispatcher.forward(request, response);
 
-		response.sendRedirect("N1/administrator2.jsp");
+		response.sendRedirect("N1/administrator.jsp");
 	}
 
 }

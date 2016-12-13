@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 
 
-			PasswordOKorNot pON = new PasswordOKorNot();
+
 
 		    String pass = request.getParameter("pass");
 
@@ -59,12 +59,12 @@ public class LoginServlet extends HttpServlet {
 
 		    if (pass.equals("system")) {
 		    	t.setLogin(true);
-		    	response.sendRedirect("N1/administrator2.jsp");
+		    	response.sendRedirect("N1/administrator.jsp");
 
 		    }else{
 		    	//t.setLogin(false);
 		    	response.sendRedirect("N1/loginFalse.jsp");
-		    	pON.setOk(false);
+
 		    }
 
 
