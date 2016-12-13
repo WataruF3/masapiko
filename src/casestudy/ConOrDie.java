@@ -123,8 +123,7 @@ public class ConOrDie extends HttpServlet {
 
 
 
-		//RequestDispatcher dispatcher = request.getRequestDispatcher("N1/administrator2.jsp");
-		//dispatcher.forward(request, response);
+	
 
 		response.sendRedirect("N1/administrator.jsp");
 	}

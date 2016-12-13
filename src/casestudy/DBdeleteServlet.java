@@ -47,7 +47,7 @@ public class DBdeleteServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("N1/administrator2.jsp");
+		response.sendRedirect("N1/administrator.jsp");
 
 
 
