@@ -308,7 +308,9 @@ function initialize() {
     		scaleControl: false,
     		center: new google.maps.LatLng(34.410605,135.295360),
     
-    		mapTypeControlOptions: {mapTypeIds: [
+    		mapTypeControlOptions: {
+		style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+		mapTypeIds: [
     		 'radarmap',
    		 google.maps.MapTypeId.ROADMAP,
    		 google.maps.MapTypeId.TERRAIN,
@@ -440,7 +442,7 @@ function readXML(){
 
 	}); //end of downloadUrl
 
-//setTimeout(removeMarkers,300);
+
 setTimeout(readXML,3000);
 }
 
@@ -448,11 +450,18 @@ setTimeout(readXML,3000);
 *çÌèúÇÃé¿ëï
 */
 function remove(i){
-mark[i]= null;
-marker[i]=null;
+mark[i].setMap(null);
+marker[i].setMap(null);
 modeSArray[i]=null;
 sidebarList[i]=null;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+
+    function buttonclick() {
+      // buttonÇÃElementÇéÊìæ
+      var button = document.getElementById("btn");
+	  map.setMapTypeId(GSI_GAZO_OLD);
+
+    }
