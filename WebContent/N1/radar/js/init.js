@@ -387,7 +387,7 @@ function initialize() {
     }
   });
 //�n���@�o�T�쐬
-var marca = document.createElement('div');
+/**var marca = document.createElement('div');
   marca.style.fontSize = '11px';
   marca.style.color = '#666';
   marca.style.paddingTop = '2px';
@@ -398,6 +398,7 @@ var marca = document.createElement('div');
   marca.style.backgroundColor = '#fff';
   map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(marca);
   marca.innerHTML = '<a href="http://maps.gsi.go.jp/development/ichiran.html" target="_blank">���y�n���@</a>';
+ */
 
   google.maps.event.addListener(map, 'zoom_changed', function() {
     zoomLevel = map.getZoom();
