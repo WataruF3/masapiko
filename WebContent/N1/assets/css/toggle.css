@@ -4,7 +4,7 @@ body {
 
 .toggles {
    width: 300px;
-   margin: 100px auto;
+   margin: 30px auto;
    background: 1px solid black;
 }
 
@@ -13,7 +13,7 @@ body {
    height: 80px;
    border: 2px solid #f0ebeb;
    border-radius: 130px;
-   margin-bottom: 45px;
+   margin-bottom: 50px;
    padding: 25px;
    background: linear-gradient(to bottom right, white, rgba(220,220,220,.5)), white;
    box-shadow: 0 0 0 2px #fbfbfb;

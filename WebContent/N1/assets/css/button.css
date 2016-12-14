@@ -2,7 +2,7 @@
 
 button {
   transition-property: all;
-  transition-duration: 1.8s;
+  transition-duration: 0.3s;
   transition-timing-function: ease-out;
 }
 
@@ -22,16 +22,10 @@ button {
 button:hover {
   background: green;
   color: #fff;
-  font-size: 34px;
+  font-size: 25px;
 }
 
 body {
   background: #222;
 }
 
-button {
-  position: absolute;
-  top: 60%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-}

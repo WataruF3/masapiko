@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="./assets/css/button.css" />
 	<link rel="stylesheet" href="./assets/css/toggle.css" />
 	<link rel="stylesheet" href="./assets/css/dbbutton.css" />
+	<link rel="stylesheet" href="assets/css/2.css" />
 
 
 	</head>
@@ -23,10 +24,10 @@
 
 
 
-   <%if(t!=null){ %>
 
-   <div class="toggles">
-	   <form action="/connection/ConOrDie" method="post" >
+
+    <div class="toggles">
+	   <form action="/connection/ConOrDie2" method="post" >
 
    <h1>ＤＢに格納する？</h1>
 	      <div class="toggle-border">
@@ -55,46 +56,7 @@
 
 
 <button>
-  Are you sure?
-</button>
-
-
-
-
-
-	   </form>
-	   <%}else if(t==null){ %>
-
-   <div class="toggles">
-	    <form action="/connection/ConOrDie" method="post" >
-
-   <h1>ＤＢに格納する？</h1>
-	      <div class="toggle-border">
-
-
-
-	          <input type="checkbox" id="one" name="in" value="1" />
-
-	         <label for="one">
-	            <div class="handle"></div>
-	         </label>
-	      </div>
-	      <h1>XML吐き出す？</h1>
-	      <div class="toggle-border">
-
-
-	          <input type="checkbox" id="two" name="xml" value="1" />
-
-	         <label for="two">
-	            <div class="handle"></div>
-	         </label>
-	      </div>
-
-
-
-
-<button>
- Are you sure?
+  送信する？
 </button>
 
 
@@ -103,12 +65,22 @@
 
 	   </form>
 
-	   <%} %>
+
    </div>
+				<%if(t.isIn()){ %>
+				<a class="btn btn-small btn-blue btn-radius" href="#">DB insert ok</a>
+				<%}else if(t.isIn()!=true){ %>
+				<a class="btn btn-small btn-red btn-radius" href="#">DB not insert</a>
+				<%} %>
 
+				<%if(t.isXml()){ %>
+				<a class="btn btn-small btn-blue btn-radius" href="#">Xml ok</a>
+				<%}else if(t.isXml()!=true){ %>
+				<a class="btn btn-small btn-red btn-radius" href="#">Xml bad</a>
+				<%} %>
 
+<br><br>
 
-<br><br><br><br><br><br>
 
 <li><a href="#" class="round green" onclick="document.form1.submit();return false;">ADMIN END<span class="round">管理者画面を終了します</span></a>
 
@@ -133,6 +105,7 @@
 
 </form>
 </li>
+
 
 
 
