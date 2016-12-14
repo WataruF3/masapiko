@@ -27,12 +27,12 @@
 		<!-- Signup Form -->
 		<a class="btn btn-medium btn-blue btn-radius" href="./radar/radar.html">RADAR CONTROL</a>
 
-			<form action="/connection/MakeScope" method="post" >
-				<input type="button" value="CLOSE" onClick="location.href='../index.html'">
-				<input type="submit" value="ADMINISTRATOR" />
 
+		<a href="#" class="btn btn-medium btn-green btn-radius" onclick="document.form1.submit();return false;">ADMINISTRATOR</a>
+				<a class="btn btn-medium btn-orange btn-radius" href="../index.html">CLOSE</a>
+		 <form name="form1" method="POST" action="/connection/MakeScope" >
+		</form>
 
-			</form>
 			<%if(t!=null){ %>
 				<%if(t.isIn()){ %>
 				<a class="btn btn-small btn-blue btn-radius" href="#">DB insert ok</a>

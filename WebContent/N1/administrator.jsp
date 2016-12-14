@@ -27,9 +27,9 @@
 
 
     <div class="toggles">
-	   <form action="/connection/ConOrDie2" method="post" >
+	   <form action="/connection/ConOrDie" method="post" >
 
-   <h1>ＤＢに格納する？</h1>
+<a class="btn btn-large btn-gray btn-radius" href="#">DB</a>
 	      <div class="toggle-border">
 	      <%if(t.isIn()){ %>
      <input type="checkbox" id="one" name="in" value="1" checked="checked"/>
@@ -40,7 +40,7 @@
 	            <div class="handle"></div>
 	         </label>
 	      </div>
-	      <h1>XML吐き出す？</h1>
+<a class="btn btn-large btn-gray btn-radius" href="#">XML</a>
 	      <div class="toggle-border">
 	      <%if(t.isXml()){ %>
 	         <input type="checkbox" id="two" name="xml" value="1" checked="checked" />
@@ -56,7 +56,7 @@
 
 
 <button>
-  送信する？
+ submit
 </button>
 
 
@@ -98,7 +98,7 @@
 </form>
 </li>
 
-<li><a href="#" class="round yellow" onclick="document.form3.submit();return false;">PRESERVE DB<span class="round">DBをCSVで保存します</span></a>
+<li><a href="#" class="round yellow" onclick="document.form3.submit();return false;">SAVE DB<span class="round">DBをCSVで保存します</span></a>
 
  <form name="form3" method="POST" action="/connection/CsvMaker" >
 
