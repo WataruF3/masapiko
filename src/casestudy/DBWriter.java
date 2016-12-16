@@ -32,10 +32,13 @@ public class DBWriter {
 	 */
 	protected void createCSV(String type)  throws Exception {
 
-		RepositoryChooser repoChooser = new RepositoryChooser();
-		repoChooser.actionPerformed(type + "テーブル");
+//		RepositoryChooser repoChooser = new RepositoryChooser();
+//		repoChooser.actionPerformed(type + "テーブル");
+//
+//		String fileName = repoChooser.getDir() + sdf.format(timeStamp_) + " " + type + " " + repoChooser.getFileName() + ".csv";
 
-		String fileName = repoChooser.getDir() + sdf.format(timeStamp_) + " " + type + " " + repoChooser.getFileName() + ".csv";
+
+		String fileName = "X:\\Public\\システム8期\\CSV_Export\\" + type + ".csv";
 		String sql = "SELECT * FROM " + type;
 
 		Vector<String> datas = new Vector<String>(); // データ格納用の可変長配列
