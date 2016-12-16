@@ -8,8 +8,6 @@ import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 
-import casestudy.PlanePosition;
-
 @RunWith(Enclosed.class)
 public class PlanePositionFactoryTest {
 
@@ -17,7 +15,7 @@ public class PlanePositionFactoryTest {
 		@Test
 		public void テストデータ11行目と32行目からPlanePosition作成テスト() {
 			double actual ;
-			double expected = 36.077286856515066;
+			double expected = 34.24284854177701;
 			PlanePosition sut;
 
 			rawDataToPlanePosition(TestDataRead.fileReadLineBinary(11));
@@ -25,7 +23,7 @@ public class PlanePositionFactoryTest {
 			actual = sut.getLat();
 			assertThat("LAT TEST:",actual, is(expected));
 
-			expected = 138.14062889586106;
+			expected = 135.26269912719727;
 			actual = sut.getLon();
 			assertThat("LON TEST:",actual, is(expected));
 

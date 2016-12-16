@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="./assets/css/toggle.css" />
 	<link rel="stylesheet" href="./assets/css/dbbutton.css" />
 	<link rel="stylesheet" href="assets/css/2.css" />
+	<link rel="stylesheet" href="assets/css/popup.css" />
 
 
 	</head>
@@ -55,10 +56,20 @@
 
 
 
-<button>
- submit
-</button>
+<div class="box">
+	<a class="button" href="#popup1">SUBMIT</a>
+</div>
 
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>Are You Sure?</h2>
+		<a class="close" href="#">&times;</a>
+	<button>yes</button>
+		<div class="content">
+			本当に送信しても大丈夫ですか？
+		</div>
+	</div>
+</div>
 
 
 
@@ -82,7 +93,18 @@
 <br><br>
 
 
-<li><a href="#" class="round green" onclick="document.form1.submit();return false;">ADMIN END<span class="round">管理者画面を終了します</span></a>
+
+
+
+<div class="box">
+	<a class="button" href="#popup2">ADMIN END</a>
+</div>
+
+<div id="popup2" class="overlay">
+	<div class="popup">
+		<h2>Are You Sure?</h2>
+		<a class="close" href="#">&times;</a>
+	<li><a href="#" class="round green" onclick="document.form1.submit();return false;">ADMIN END<span class="round">管理者画面を終了します</span></a>
 
  <form name="form1" method="POST" action="/connection/AdminEnd" >
 
@@ -90,14 +112,44 @@
 </form>
 </li>
 
-<li><a href="#" class="round red"" onclick="document.form2.submit();return false;">DB RESET<span class="round">DBを全て消します</span></a>
+	</div>
+</div>
+
+
+
+
+<div class="box">
+	<a class="button" href="#popup3">DB RESET</a>
+</div>
+
+<div id="popup3" class="overlay">
+	<div class="popup">
+		<h2>Are You Sure?</h2>
+		<a class="close" href="#">&times;</a>
+	<li><a href="#" class="round red" onclick="document.form2.submit();return false;">DB RESET<span class="round">DBを全て消します</span></a>
 
  <form name="form2" method="POST" action="/connection/DBdeleteServlet" >
 
 
 </form>
 </li>
+		<div class="content">
+			本当にDBリセットしても大丈夫ですか？
+		</div>
+	</div>
+</div>
 
+
+
+
+<div class="box">
+	<a class="button" href="#popup4">SAVE DB</a>
+</div>
+
+<div id="popup4" class="overlay">
+	<div class="popup">
+		<h2>Are You Sure?</h2>
+		<a class="close" href="#">&times;</a>
 <li><a href="#" class="round yellow" onclick="document.form3.submit();return false;">SAVE DB<span class="round">DBをCSVで保存します</span></a>
 
  <form name="form3" method="POST" action="/connection/CsvMaker" >
@@ -106,10 +158,8 @@
 </form>
 </li>
 
-
-
-
-
+	</div>
+</div>
 
 
 

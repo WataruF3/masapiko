@@ -1,5 +1,5 @@
 /**
-*�n���@�I�[�o�[���C�p
+*?n???@?I?[?o?[???C?p
 */
 var head=document.getElementsByTagName('head')[0];
 var insertBefore=head.insertBefore;
@@ -7,15 +7,15 @@ head.insertBefore=function(newElement,referenceElement){
 if(newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto') === 0){return}
 insertBefore.call(head,newElement,referenceElement);
 };
-var GSI_NORMAL_ID = '�n���@';
-var GSI_GAZO_OLD = '�ʐ^61-64';
-var GSI_GAZO_I = '���y�摜74-78';
-var GSI_Color = '�F�ʕW���}';
-var GSI_SAT = '�n���@�ʐ^';
+var GSI_NORMAL_ID = '?n???@';
+var GSI_GAZO_OLD = '??^61-64';
+var GSI_GAZO_I = '???y??74-78';
+var GSI_Color = '?F??W???}';
+var GSI_SAT = '?n???@??^';
 var geocoder;
 
 /**
-*�ʒu�\���v�Z�p
+*??u?\???v?Z?p
 */
 var check;
 var Radius_long = 6378137.0;
@@ -34,8 +34,8 @@ function xy(x,y){
 }
 
 /**
-*Vincenty�̎��v�Z
-*���݂̈ܓx�o�x�A������������\�������ܓx�o�x���v�Z����B
+*Vincenty????v?Z
+*??????x?o?x?A????????????\????????x?o?x???v?Z????B
 */
 function vincenty(lat1,lng1,alpha12,length){
   var U1 = Math.atan((1 - Henpei) * Math.tan(lat1));
@@ -66,14 +66,14 @@ function vincenty(lat1,lng1,alpha12,length){
 }
 
 /**
-*Vincenty�̎��Ăяo��
-*���W�A�����B������m/s�ɕϊ��B
+*Vincenty?????яo??
+*???W?A?????B??????m/s?????B
 */
 function calcVincenty(lat1,lng1,alpha12,length){
   lat1 = doRad(lat1);
   lng1=doRad(lng1);
   alpha12=doRad(alpha12);
-// xml�̓ǂݍ��ݑ��x�ɍ��킹3�b�X�V�Ȃ̂�1200�Ŋ���B�i1�b�Ȃ�3600�j
+// xml?????????x?????3?b?X?V????1200?????B?i1?b???3600?j
   length=length*1852/1200;
 
 
@@ -82,7 +82,7 @@ function calcVincenty(lat1,lng1,alpha12,length){
 }
 
 /**
-*Marker�p
+*Marker?p
 */
 var gmarkers = [];
 var sidebarList = [];
@@ -98,7 +98,7 @@ var mark = [];
 var html = [];
 
 /**
-*�q��@��SVG�t�@�C��
+*?q??@??SVG?t?@?C??
 */
 var icon = {
 	    path: "M48.049 36.31c.523.169.951-.142.951-.692v-3.494c0-.55-.387-1.23-.859-1.512l-18.282-10.895c-.472-.281-.859-.962-.859-1.511v-12.206c0-.55-.168-1.417-.374-1.928 0 0-1.091-2.708-3-3.01-.204-.036-.411-.062-.619-.062h-.01c-.241-.002-.479.028-.713.072l-.216.048-.328.102c-1.588.53-2.406 2.835-2.406 2.835-.184.519-.334 1.393-.334 1.943v12.206c0 .55-.387 1.23-.859 1.512l-18.282 10.894c-.472.282-.859.962-.859 1.512v3.494c0 .55.428.861.951.691l18.098-5.875c.523-.169.951.142.951.692v9.533c0 .55-.36 1.271-.8 1.601l-2.4 1.802c-.44.33-.8 1.051-.8 1.601v2.337c0 .55.433.876.961.724l6.075-1.745c.528-.152 1.394-.152 1.922 0l6.081 1.745c.528.152.961-.174.961-.724v-2.338c0-.55-.36-1.271-.8-1.601l-2.4-1.802c-.439-.33-.8-1.051-.8-1.601v-9.533c0-.55.428-.861.951-.691l18.098 5.876z",
@@ -115,12 +115,12 @@ var icon = {
 
 
 /**
-*�^�O�쐬�p
+*?^?O???p
 */
-/** google.maps.OverlayView���p�� */
+/** google.maps.OverlayView???p?? */
 HelloMarker.prototype = new google.maps.OverlayView();
 
-/* HelloMarker�̃R���X�g���N�^�B�ܓx�A�y�x�������o�ϐ��ɐݒ肷��B */
+/* HelloMarker??R???X?g???N?^?B??x?A?y?x???????o?????????B */
 function HelloMarker(map, lat, lng ,alt,velocity,callsign) {
   this.lat_ = lat;
   this.lng_ = lng;
@@ -129,13 +129,13 @@ function HelloMarker(map, lat, lng ,alt,velocity,callsign) {
   this.callsign = callsign;
   this.setMap(map);
 }
-      /* setPosition���Ăяo�� */
+      /* setPosition????яo?? */
 function markerMoveByLatlng( marker, lat, lng ) {
  //       var latlng = marker.getPosition();
         marker.setPosition( lat, lng );
       }
 
-      /* ���ݍ��W�ňʒu��ݒ肷��B�󂯎�������W��fromLatLngToDivPixel��Pixel�ɕϊ�����Div�̃X�^�C���ɐݒ�B */
+      /* ??????W???u??????B? ???????W??fromLatLngToDivPixel??Pixel????????Div??X?^?C??????B */
       HelloMarker.prototype.setPosition = function(lat, lng) {
         this.lat_ = lat;
         this.lng_ = lng;
@@ -143,18 +143,18 @@ function markerMoveByLatlng( marker, lat, lng ) {
   this.div_.style.left = point.x +20+ 'px';
   this.div_.style.top = point.y -30+ 'px';
       }
-      /* ���ݍ��W��LatLng�^�ŕԂ� */
+      /* ??????W??LatLng?^???? */
       HelloMarker.prototype.getPosition = function() {
         return new google.maps.LatLng( this.lat_, this.lng_ );
       }
 
 
 
-/** draw�̎����Bdiv�v�f�𐶐� */
+/** draw??????Bdiv?v?f? ? */
 HelloMarker.prototype.draw = function() {
-  // ���x���Ă΂��\��������̂ŁAdiv_�����ݒ�̏ꍇ�̂ݗv�f����
+  // ???x????????\??????????Adiv_????????????v?f????
   if (!this.div_) {
-    // �o�͂������v�f����
+    // ?o????????v?f????
     this.div_ = document.createElement( "div" );
     this.div_.style.position = "absolute";
     this.div_.style.fontSize = "95%";
@@ -162,22 +162,22 @@ HelloMarker.prototype.draw = function() {
     this.div_.style.fontWeight = 'bolder';
     this.div_.style.borderBottom = "solid 1px black";
     this.div_.innerHTML = this.callsign+"<BR />"+this.altitude+" "+this.h_velocity;
-    // �v�f��ǉ�����q���擾
+    // ?v?f????????q???擾
     var panes = this.getPanes();
-    // �v�f�ǉ�
+    // ?v?f???
     panes.overlayLayer.appendChild( this.div_ );
   }
 
-  // �ܓx�A�y�x�̏����APixel�igoogle.maps.Point�j�ɕϊ�
+  // ??x?A?y?x??????APixel?igoogle.maps.Point?j????
   var point = this.getProjection().fromLatLngToDivPixel( new google.maps.LatLng( this.lat_, this.lng_ ) );
 
-  // �擾����Pixel���̍��W�ɁA�v�f�̈ʒu��ݒ�
-  // �w�肵���s�N�Z���̈ʒu�ɗv�f���ݒ肳���
+  // ?擾????Pixel??????W??A?v?f???u????
+  // ?w?????s?N?Z?????u??v?f????????
   this.div_.style.left = point.x +20+ 'px';
   this.div_.style.top = point.y -30+ 'px';
 }
 
-/* �폜�����̎��� */
+/* ??????????? */
 HelloMarker.prototype.remove = function() {
   if (this.div_) {
     this.div_.parentNode.removeChild(this.div_);
@@ -196,25 +196,25 @@ function hokan(i){
 }
 
 /**
-*modeSArray�ɍq��@�����݂��Ă��邩�T��
+*modeSArray??q??@?????????????T??
 */
 function IsArrayExists(array, value) {
-  // �z��̍Ō�܂Ń��[�v
+  // ?z?????????[?v
   for (var i =0, len = array.length; i < len; i++) {
     if (value == array[i]) {
-      // ���݂�����true��Ԃ�
+      // ?????????true????
       return true;
     }
   }
-  // ���݂��Ȃ��ꍇfalse��Ԃ�
+  // ??????????false????
   return false;
 }
 
 /**
-*�q��@�̃}�[�J�[���쐬����
+*?q??@??}?[?J?[????????
 */
 function createMarker(modesaddress,latitude,longitude,altitude,h_velocity,callsign,h_direction,timestamp){
-	// �^�O�p�̏���
+	// ?^?O?p?????
 	if(callsign=="????????"){callsign="unknown";}
 	var velocity =   Math.round(h_velocity);
 	var alt2 = ( '0000000' + altitude ).slice( -7 );
@@ -223,9 +223,9 @@ function createMarker(modesaddress,latitude,longitude,altitude,h_velocity,callsi
 	var onedirection =parseInt(h_direction, 10);
 	var len = modeSArray.length;
 
-// modeSArray�ɓo�^����Ă���ꍇ�̍X�V���s���B
+// modeSArray??o?^???????????X?V???s???B
   for (i =0, len = modeSArray.length; i < len; i++) {
-/**�Y���@�̏ꍇ�}�[�J�[�ƃ^�O���X�V����*/
+/**?Y???@????}?[?J?[??^?O???X?V????*/
     if (modesaddress == modeSArray[i]){
     	newIcon = marker[i].getIcon();
 	newIcon.rotation = onedirection;
@@ -235,8 +235,11 @@ function createMarker(modesaddress,latitude,longitude,altitude,h_velocity,callsi
 	markerMoveByLatlng( mark[i], latitude, longitude) ;
 	kesuhairetu[i] = 0;
 	html[i] = "TIME:"+timestamp;
-	sidebarList[i] = '<a href="javascript:myclick('+ i +')">'+ callsign +'</a><br />';
-	// �Y���@�łȂ��ꍇ�A�}�[�J�[�ƃ^�O��\���ʒu�ֈړ�������
+	infoWindow.setContent(html[i]);
+	sidebarList[i] = '<a class="btn btn-small btn-green btn-radius" href="javascript:myclick('+ i +')">'+callsign+'</a><br />';
+
+
+	// ?Y???@???????A?}?[?J?[??^?O??\????u??????????
     }else if(hantei[i]==1){
     	var pos = marker[i].getPosition();
     	newIcon = marker[i].getIcon();
@@ -249,20 +252,20 @@ function createMarker(modesaddress,latitude,longitude,altitude,h_velocity,callsi
 	markerMoveByLatlng( mark[i], estlat, estlng);
     	kesuhairetu[i]++;
     }
-/**�폜�����Bxml�Ɉ��񐔘A���ő��݂��Ȃ��ꍇ�폜���s���B*/
+/**???????Bxml???? A??????????????????s???B*/
     if(kesuhairetu[i]>modeSArray.length*10 ){
     	remove(i);
     	hantei[i]=0;
     }
   }//end of for
 
-/**���߂�XML�ɓ����Ă����@�̂̃}�[�J�[���쐬����*/
+/**?????XML???????????@???}?[?J?[????????*/
 if(! IsArrayExists(modeSArray, modesaddress)) {
 marker[i] = new google.maps.Marker({
-	map: map, //�}�[�J�[��\������n�}��
-	position: new google.maps.LatLng(latitude,longitude), //�}�[�J�[�̕\���ʒu
-	icon: icon, //�}�[�J�[�A�C�R���̐ݒ�
-	title: callsign //�I���}�E�X�ŕ\�������镶��
+	map: map, //?}?[?J?[??\??????n?}??
+	position: new google.maps.LatLng(latitude,longitude), //?}?[?J?[??\????u
+	icon: icon, //?}?[?J?[?A?C?R??????
+	title: callsign //?I???}?E?X??\??????????
 
 });
 	kesuhairetu[i] = 0;
@@ -275,13 +278,13 @@ marker[i] = new google.maps.Marker({
 	gmarkers.push(marker[i]);
 	modeSArray.push(modesaddress);
 	hantei[i] = 1;
-//�T�C�h�o�[�ɓo�^����R�[���T�C�����쐬
+//?T?C?h?o?[??o?^????R?[???T?C??????
 	sidebarList[i] = '<a href="javascript:myclick('+ i +')">'+ callsign +'</a><br />';
 	  html[i] = "TIME:"+timestamp;
 	 google.maps.event.addListener(marker[i], 'click', function() {
-		 infoWindow.setContent(html[i]); //���E�B���h�E�̓��e
-		 infoWindow.open(map,marker[i]); //���E�B���h�E��\��
-		 map.panTo(marker[i].getPosition()); //�}�[�J�[��n�}�̒��S�ʒu�Ɉړ�
+		 infoWindow.setContent(html[i]); //???E?B???h?E????e
+		 infoWindow.open(map,marker[i]); //???E?B???h?E??\??
+		 map.panTo(marker[i].getPosition()); //?}?[?J?[??n?}????S??u????
 	});
   }
 
@@ -295,7 +298,7 @@ marker[i] = new google.maps.Marker({
 function myclick(num) { google.maps.event.trigger(marker[num], "click"); }
 function zoomInOut(value) { map.setZoom(map.getZoom()+value); }
 
-/**�}�b�v�̏�����*/
+/**?}?b?v???????*/
 function initialize() {
   geocoder = new google.maps.Geocoder();
 	gmark= new google.maps.MVCArray();
@@ -323,14 +326,14 @@ function initialize() {
     		GSI_Color,
  //  		 GSI_SAT
  		 ]},
-    		scrollwheel: true,//�}�E�X�z�C�[���ł̃Y�[��
+    		scrollwheel: true,//?}?E?X?z?C?[?????Y?[??
 
               };
 
 	map = new google.maps.Map(document.getElementById("map_canvas"),
             mapOptions);
 
- /* �X�^�C���t���n�} */
+ /* ?X?^?C???t???n?} */
   var styleOptions = [{
  "elementType": "geometry", "stylers": [ { "color": "#1d2c4d" } ] }, { "elementType": "labels", "stylers": [ { "visibility": "off" } ] }, { "elementType": "labels.text.fill", "stylers": [ { "color": "#8ec3b9" } ] }, { "elementType": "labels.text.stroke", "stylers": [ { "color": "#1a3646" } ] }, { "featureType": "administrative", "elementType": "geometry", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative.country", "elementType": "geometry.stroke", "stylers": [ { "color": "#4b6878" } ] }, { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [ { "color": "#64779e" } ] }, { "featureType": "administrative.neighborhood", "stylers": [ { "visibility": "off" } ] }, { "featureType": "administrative.province", "elementType": "geometry.stroke", "stylers": [ { "color": "#4b6878" } ] }, { "featureType": "landscape", "elementType": "geometry", "stylers": [ { "visibility": "off" } ] }, { "featureType": "landscape.man_made", "elementType": "geometry.stroke", "stylers": [ { "color": "#334e87" } ] }, { "featureType": "landscape.natural", "elementType": "geometry", "stylers": [ { "color": "#023e58" }, { "visibility": "simplified" } ] }, { "featureType": "poi", "stylers": [ { "visibility": "off" } ] }, { "featureType": "poi", "elementType": "geometry", "stylers": [ { "color": "#283d6a" } ] }, { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [ { "color": "#6f9ba5" } ] }, { "featureType": "poi", "elementType": "labels.text.stroke", "stylers": [ { "color": "#1d2c4d" } ] }, { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [ { "color": "#023e58" } ] }, { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [ { "color": "#3C7680" } ] }, { "featureType": "road", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road", "elementType": "geometry", "stylers": [ { "color": "#304a7d" } ] }, { "featureType": "road", "elementType": "labels.icon", "stylers": [ { "visibility": "off" } ] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [ { "color": "#98a5be" } ] }, { "featureType": "road", "elementType": "labels.text.stroke", "stylers": [ { "color": "#1d2c4d" } ] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [ { "color": "#2c6675" } ] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [ { "color": "#255763" } ] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [ { "color": "#b0d5ce" } ] }, { "featureType": "road.highway", "elementType": "labels.text.stroke", "stylers": [ { "color": "#023e58" } ] }, { "featureType": "transit", "stylers": [ { "visibility": "off" } ] }, { "featureType": "transit", "elementType": "labels.text.fill", "stylers": [ { "color": "#98a5be" } ] }, { "featureType": "transit", "elementType": "labels.text.stroke", "stylers": [ { "color": "#1d2c4d" } ] }, { "featureType": "transit.line", "elementType": "geometry.fill", "stylers": [ { "color": "#283d6a" } ] }, { "featureType": "transit.station", "elementType": "geometry", "stylers": [ { "color": "#3a4762" } ] }, { "featureType": "water", "elementType": "geometry", "stylers": [ { "color": "#0e1626" } ] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [ { "color": "#4e6d70" } ]
   }];
@@ -386,7 +389,7 @@ function initialize() {
       return img;
     }
   });
-//�n���@�o�T�쐬
+//?n???@?o?T??
 /**var marca = document.createElement('div');
   marca.style.fontSize = '11px';
   marca.style.color = '#666';
@@ -397,7 +400,7 @@ function initialize() {
   marca.style.marginBottom = '4px';
   marca.style.backgroundColor = '#fff';
   map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(marca);
-  marca.innerHTML = '<a href="http://maps.gsi.go.jp/development/ichiran.html" target="_blank">���y�n���@</a>';
+  marca.innerHTML = '<a href="http://maps.gsi.go.jp/development/ichiran.html" target="_blank">???y?n???@</a>';
  */
 
   google.maps.event.addListener(map, 'zoom_changed', function() {
@@ -411,12 +414,12 @@ window.onload = readXML();
 }
 
 /**
-*XML�̓ǂݍ���
+*XML???????
 */
 function readXML(){
 
-    var filename = "./Aircraft.xml"; //�t�@�C����
-    filename += "?" + Math.random(); //������t��
+    var filename = "./Aircraft.xml"; //?t?@?C????
+    filename += "?" + Math.random(); //??????t??
 	downloadUrl(filename, function(data){
 
 		var xmlDoc = xmlParse(data);
@@ -449,7 +452,7 @@ setTimeout(readXML,3000);
 }
 
 /**
-*�폜�̎���
+*???????
 */
 function remove(i){
 mark[i].setMap(null);
@@ -462,7 +465,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
     function buttonclick() {
-      // button��Element���擾
+      // button??Element???擾
       var button = document.getElementById("btn");
 	  map.setMapTypeId(GSI_GAZO_OLD);
 

@@ -7,8 +7,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import casestudy.Velocity;
-
 public class VelocityFactoryTest {
 
 	@Test
@@ -26,7 +24,7 @@ public class VelocityFactoryTest {
 		assertThat("Deg",sut.getDeg(), is(31));
 		assertThat("S_Vr",sut.getS_Vr(), is(1));
 		assertThat("Vel",sut.getVel(), is(458.9814811078983));
-		assertThat("Vr",sut.getVr(), is(22.0));
+		assertThat("Vr",sut.getVr(), is(2752.0));
 	}
 
 	@Test
@@ -47,7 +45,7 @@ public class VelocityFactoryTest {
 	@Test
 	public void testCalcVerticalVerocityテストデータ4行目() {
 		double actual = calcVerticalVerocity(fileReadLineBinary(4));
-		double expected = 5.0;
+		double expected = 576.0;
 
 		assertThat(actual, is(expected));
 	}
@@ -55,7 +53,7 @@ public class VelocityFactoryTest {
 	@Test
 	public void testCalcVerticalVerocityテストデータ23行目() {
 		double actual = calcVerticalVerocity(fileReadLineBinary(23));
-		double expected = 22.0;
+		double expected = 2752.0;
 
 		assertThat(actual, is(expected));
 	}
@@ -63,7 +61,7 @@ public class VelocityFactoryTest {
 	@Test
 	public void testCalcHorizonDegテストデータ4行目() {
 		double actual = calcHorizonDeg(fileReadLineBinary(4));
-		double expected = 272.7263109939063;
+		double expected = 92.72631099390628;
 
 		assertThat(actual, is(expected));
 	}

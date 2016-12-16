@@ -46,7 +46,6 @@ public class AircraftSerch  extends Thread {
 				con = ConnectionManager.getConnection();
 				System.out.println("接続完了");
 
-				//CaseStudyDAO scDAO = new CaseStudyDAO(con);
 				VelocityDAO veDAO = new VelocityDAO(con);
 				PositionDAO poDAO = new PositionDAO(con);
 				CallsignDAO caDAO = new CallsignDAO(con);
@@ -58,7 +57,7 @@ public class AircraftSerch  extends Thread {
 				Thread.sleep(3000);
 
 				if(posi == null || call == null || velo == null ){
-					System.out.println("そのような航空機くわはら");
+					System.out.println("そのような航空機はいません");
 
 				}else{
 
@@ -69,7 +68,7 @@ public class AircraftSerch  extends Thread {
 						if(velo[0]==null){System.out.println("oppaivelo");}
 						if(call[0]==null){System.out.println("oppaicall");}
 						while(posi[i]!=null){
-							if(call[i]==null || posi[i]==null || velo[i]==null){System.out.println("さとうなるです！\n\n");}
+							if(call[i]==null || posi[i]==null || velo[i]==null){System.out.println("Null\n\n");}
 							else{
 							System.out.println(posi[i].getModes());
 							System.out.println(call[i].getCallsign());
@@ -84,6 +83,7 @@ public class AircraftSerch  extends Thread {
 							}
 							i++;
 						  }
+
 						 // Documentインスタンスの生成
 				          DocumentBuilder documentBuilder = null;
 				          try {
@@ -95,17 +95,15 @@ public class AircraftSerch  extends Thread {
 				          }
 				          Document document = documentBuilder.newDocument();
 
-
 				          i=0;
 
 				          Element aircrafts = document.createElement("aircrafts");
 				          document.appendChild(aircrafts);
-				      	//System.out.println("おっぱい");
+
 				          while(posi[i]!=null){
 
-						  		  System.out.println("おっぱい");
-									//if(call[i]==null || velo[i]==null){System.out.println("XMLには全機体そろってないから書き込めない\n\n");}
-									//else{
+						  		System.out.println("XML1機分作成");
+
 								Element aircraft = document.createElement("aircraft");
 								aircrafts.appendChild(aircraft);
 						          aircraft.setAttribute("modeSaddress",posi[i].getModes());
@@ -120,17 +118,13 @@ public class AircraftSerch  extends Thread {
 						          aircraft.setAttribute("v_velo",String.valueOf(velo[i].getV_velo()));
 						          aircraft.setAttribute("h_dir",String.valueOf(velo[i].getH_dir()));
 						          aircraft.setAttribute("v_dir",String.valueOf(velo[i].getV_dir()));
-
 						          }else{
 						          aircraft.setAttribute("h_velo","????????");
 						          aircraft.setAttribute("v_velo","????????");
 						          aircraft.setAttribute("h_dir","????????");
 						          aircraft.setAttribute("v_dir","????????");}
 
-
 						          aircraft.setAttribute("timestamp",String.valueOf(posi[i].getTimestamp()));
-
-//}
 
 						          i++;
 				          }
